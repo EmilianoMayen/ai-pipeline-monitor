@@ -20,12 +20,12 @@ The architecture separates data collection, storage, monitoring, AI reasoning, a
 ```mermaid
 flowchart TD
 
-    A[Pipeline Simulator / External API]
-    B[(DuckDB Database)]
-    C[Monitoring Engine]
-    D[AI Agent (LLM)]
-    E[Streamlit Dashboard]
-    F[User]
+    A["Pipeline Simulator / External API"]
+    B[("DuckDB Database")]
+    C["Monitoring Engine"]
+    D["AI Agent"]
+    E["Streamlit Dashboard"]
+    F["User"]
 
     A --> B
     B --> C
