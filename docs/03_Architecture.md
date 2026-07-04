@@ -17,41 +17,23 @@ The architecture separates data collection, storage, monitoring, AI reasoning, a
 ---
 
 # High-Level Architecture
+```mermaid
+flowchart TD
 
-                    +----------------------+
-                    |      User            |
-                    +----------+-----------+
-                               |
-                               |
-                    +----------v-----------+
-                    | Streamlit Dashboard  |
-                    +----------+-----------+
-                               |
-                               |
-                    +----------v-----------+
-                    | Monitoring Engine    |
-                    +----------+-----------+
-                               |
-        +----------------------+----------------------+
-        |                                             |
-        |                                             |
-+-------v--------+                         +-----------v----------+
-| Pipeline Data  |                         | AI Agent             |
-| Collector      |                         | (LLM)                |
-+-------+--------+                         +-----------+----------+
-        |                                              |
-        |                                              |
-        +----------------------+-----------------------+
-                               |
-                    +----------v-----------+
-                    | DuckDB Database      |
-                    +----------+-----------+
-                               |
-                               |
-                    +----------v-----------+
-                    | Pipeline Simulator   |
-                    | / External API       |
-                    +----------------------+
+    A[Pipeline Simulator / External API]
+    B[(DuckDB Database)]
+    C[Monitoring Engine]
+    D[AI Agent (LLM)]
+    E[Streamlit Dashboard]
+    F[User]
+
+    A --> B
+    B --> C
+    C --> D
+    C --> E
+    D --> E
+    E --> F
+```
 
 ---
 
